@@ -5,8 +5,7 @@ import {HomeComponent} from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'admin', component: AdminComponent}
+   {path: '', component: AdminComponent}
 ];
 
 @NgModule({
