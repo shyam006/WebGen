@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {HomeComponent} from './home/home.component';
-import { from } from 'rxjs';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  {path: '', component: HomeComponent},
+  {path: 'admin', component: AdminComponent}
 ];
 
 @NgModule({
@@ -13,3 +14,32 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+// to switch between admin and website
+// https://stackoverflow.com/questions/44226608/how-to-separate-admin-and-the-front-web-in-angular-2-project
+// const routes: Routes = [
+//   {
+//     path: '',
+//     loadChildren: 'app/+website/website.module#WebsiteModule'
+//   },
+//   {
+//     path: 'admin',
+//     loadChildren: 'app/+admin-area/admin-area.module#AdminAreaModule'
+//   }
+// ];
+
+// @NgModule({
+//   imports: [
+//     RouterModule.forRoot(routes)
+//   ],
+//   exports: [
+//     RouterModule,
+//     AppComponent
+//   ],
+//   declarations: [
+//     AppComponent
+//   ]
+// })
+
+// export class AppRouterModule {}
